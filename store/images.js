@@ -3,29 +3,34 @@ export const state = () => ({
 })
 export const mutations = {
   SET_IMAGES(state, payload) {
-    state.images = payload
+    payload.map(i => {
+      state.images.push(i)
+    })
+  },
+  DELETE_IMAGE: (state, payload) => {
+    var index = state.images.findIndex(image => image.id === payload)
+    state.images.splice(index, 1)
   }
 }
-// https://jsonplaceholder.typicode.com/photos?_page=1&_limit=5
 export const actions = {
   GET_IMAGES({ commit }, params) {
     return new Promise((resolve, reject) => {
       this.$axios
-        .$get("/photos", {
-          params: {
-            _start: params.start,
-            _end: params.end
-          }
-        })
+        .$get(
+          `https://jsonplaceholder.typicode.com/photos?_page=${params.page}&_limit=${params.limit}`
+        )
         .then(
           data => {
-            commit("SET_IMAGES", data)
             resolve(data)
+            commit("SET_IMAGES", data)
           },
           error => {
             reject(error)
           }
         )
     })
+  },
+  REMOVE_IMAGE: (context, payload) => {
+    context.commit("DELETE_IMAGE", payload)
   }
 }

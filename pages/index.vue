@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <!-- {{ $store.state.counter }} -->
+  <div class="windowHight">
     <div v-for="item in images" :key="item.id">
-      <h1>{{ item.title }}</h1>
+      <h1 @click="deleteItem(item.id)">
+        {{ item.title }}
+      </h1>
+      <h2 style="color: blue">
+        {{ item.id }}
+      </h2>
     </div>
     <client-only>
       <infinite-loading spinner="spiral" @infinite="infiniteScroll" />
@@ -14,12 +18,12 @@
 import { mapState } from "vuex"
 export default {
   async fetch({ store }) {
-    await store.dispatch("images/GET_IMAGES", { start: 0, end: 20 })
+    await store.dispatch("images/GET_IMAGES", { page: 1, limit: 10 })
   },
   data() {
     return {
-      start: 0,
-      end: 30
+      page: 2,
+      limit: 10
     }
   },
   computed: {
@@ -27,30 +31,35 @@ export default {
       images: state => state.images.images
     })
   },
-  mounted() {
-    console.log(this.images)
-  },
   methods: {
+    getPayloadSlice(page, limit) {
+      return this.$store.dispatch("images/GET_IMAGES", {
+        page: page,
+        limit: limit
+      })
+    },
+
     infiniteScroll($state) {
-      this.$store
-        .dispatch("images/GET_IMAGES", {
-          start: this.start,
-          end: this.end
-        })
-        .then(res => {
-          if (res.length) {
-            console.log(this.start, "VECES START")
-            console.log(this.end, "VECES END")
-            this.end += 30
+      setTimeout(() => {
+        this.getPayloadSlice(this.page, this.limit).then(res => {
+          if (res.length === this.limit) {
+            this.page += 1
             $state.loaded()
           } else {
             $state.complete()
           }
         })
+      }, 500)
+    },
+
+    deleteItem(id) {
+      this.$store.dispatch("images/REMOVE_IMAGE", id)
     }
   }
 }
 </script>
 <style lang="stylus">
 @import '../styles/pages/home.stylus';
+.windowHight
+  min-height 200vh
 </style>
