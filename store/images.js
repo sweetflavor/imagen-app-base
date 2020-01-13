@@ -17,7 +17,7 @@ export const actions = {
     return new Promise((resolve, reject) => {
       this.$axios
         .$get(
-          `https://jsonplaceholder.typicode.com/photos?_page=${params.page}&_limit=${params.limit}`
+          `/photos?_page=${params.page}&_limit=${params.limit}`
         )
         .then(
           data => {

@@ -53,6 +53,5 @@ export default {
 }
 </script>
 <style lang="stylus">
-@import '../styles/base/animation.stylus';
-@import '../styles/pages/home.stylus';
+
 </style>

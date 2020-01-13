@@ -1,10 +1,12 @@
 <template>
   <transition-group class="galery-wra" name="fade" tag="div">
-      <div v-for="(item, index) in data" :key="index" class="galery-wra__items">
-        <!-- <img class="cover-delete" v-if="isHovered" src="~assets/delete.svg"/> -->
-        <img :class="{ darkMode: colorMode }" :src="item.url" :alt="item.title" @click="deleteItem(item.id)">
-      </div>
-    </transition-group>
+    <div v-for="item in data" :key="item.id" class="galery-wra__items" @click="deleteItem(item.id)">
+      <img :class="{ darkMode: colorMode }" 
+           :src="item.url" 
+           :alt="item.title" 
+      >
+    </div>
+  </transition-group>
 </template>
 
 <script>
@@ -25,6 +27,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="stylus">
+@import '../styles/base/animation.stylus';
+@import '../styles/pages/images-grid.stylus';
 </style>
