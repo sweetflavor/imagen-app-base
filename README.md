@@ -1,6 +1,6 @@
 # image-app
 
-> This is a demo app to represent some basic concepts in the creation of Vue Js App ( using Nuxt Js ) using external API (https://jsonplaceholder.typicode.com/photos) to consume images.
+> This is a demo app to represent some basic concepts in the creation of Vue Js App ( using Nuxt Js ) using external API (https://jsonplaceholder.typicode.com/photos) to consume images.  Demo can be found on https://gallery-app-by-alex.surge.sh/
 
 ## Build Setup
 
