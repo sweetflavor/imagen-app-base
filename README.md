@@ -21,8 +21,8 @@ $ yarn generate
 $ yarn test
 ```
 ## Resources
-For more Nuxt Js details and documentation check out [Nuxt.js docs](https://nuxtjs.org).
-For Stylus details and documentation check out [Stylus docs](http://stylus-lang.com/).
+For more Nuxt Js details and documentation check out [Nuxt.js docs](https://nuxtjs.org).  
+For Stylus details and documentation check out [Stylus docs](http://stylus-lang.com/).  
 Testing Single-File Components with Jest [Check out this article](https://vue-test-utils.vuejs.org/guides/testing-single-file-components-with-jest.html).
 
 ## Future implementation
