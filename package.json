@@ -18,7 +18,7 @@
     "@nuxtjs/svg": "^0.1.6",
     "ava": "^0.19.1",
     "jsdom": "^11.0.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "vue-infinite-loading": "^2.4.4",
     "vue-resource": "^1.5.1"
   },
