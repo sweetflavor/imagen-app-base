@@ -15,29 +15,29 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.2",
-    "@nuxtjs/svg": "^0.1.6",
-    "ava": "^0.19.1",
+    "@nuxtjs/svg": "^0.1.12",
+    "ava": "^5.1.0",
     "jsdom": "^11.0.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.11.0",
     "vue-infinite-loading": "^2.4.4",
     "vue-resource": "^1.5.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
-    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/eslint-module": "^1.2.0",
     "@vue/test-utils": "^1.0.0-beta.30",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
-    "eslint-loader": "^3.0.3",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-vue": "^6.1.2",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
+    "stylus-loader": "^7.1.0",
     "vue-jest": "^4.0.0-0"
   }
 }
